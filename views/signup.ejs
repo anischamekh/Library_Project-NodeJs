@@ -1,0 +1,40 @@
+<%- include('shared/top.ejs')%>
+
+<br><br><br><br><br><br>
+
+<div class="container">
+    <form method="POST" action="/signUp">
+        <!-- Firstname input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="form2Example1" name="firstName" class="form-control" placeholder="First Name"/>
+        </div>
+
+        <!-- Lastname input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="form2Example1" name="lastName" class="form-control" placeholder="Last Name"/>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="email" id="form2Example1" name="email" class="form-control" placeholder="Email address"/>
+        </div>
+      
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="password" id="form2Example2" name="password" class="form-control" placeholder="Password"/>
+        </div>
+        
+        <% if(message){ %>
+          <div class="alert alert-danger">
+            <%= message %>
+          </div>
+        <% } %>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+      
+      </form>
+</div>
+
+
+<%- include('shared/bottom.ejs')%>

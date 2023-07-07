@@ -1,0 +1,42 @@
+<%- include('shared/top.ejs')%>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  
+    <div class="row">
+      <div class="col">
+        <img style="height: 600px; width: 500px;" src="/uploads/<%= book.image %>" alt=""></a>
+      </div>
+      <div class="col">
+        <h1><%= book?.title %></h1><br><h4><%= book?.author %></h4>
+        <br><br>
+        <span><%= book?.price %>$</span>
+        <br>
+        <p><%= book?.description %></p>
+
+      </div>
+    </div>
+
+</div>
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<%- include('shared/bottom.ejs')%>

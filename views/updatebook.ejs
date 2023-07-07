@@ -1,0 +1,64 @@
+<%- include('shared/top.ejs')%>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container">
+    <form method="POST" action="/mybooks/update"  enctype="multipart/form-data">
+        <div class="form-group">
+          <label >Book Title</label>
+          <input type="text" class="form-control" name="title" value="<%=updatedBook.title%>">
+        </div>
+        <div class="form-group">
+            <label >Description</label>
+            <textarea type="text" class="form-control" name="description" > 
+               <%= updatedBook.description%>
+            </textarea>
+        </div>
+        <input type="hidden" name="bookId" value="<%= updatedBook._id %>">
+        <div class="form-group">
+            <label >Author</label>
+            <input type="text" class="form-control" name="author" value="<%=updatedBook.author%>">
+        </div>
+        <div class="form-group">
+            <label >Price</label>
+            <input type="number" class="form-control" name="price" value="<%=updatedBook.price%>">
+          </div>
+          <div class="form-group">
+            <label >Number of pages</label>
+            <input type="number" class="form-control" name="nbr_pages" min="1" value="<%=updatedBook.nbr_pages%>">
+          </div>
+
+          <img src="/uploads/<%=updatedBook.image%>" width="100" height="100" >
+
+          <input type="hidden" name="oldImage" value="<%= updatedBook.image%>">
+          <div class="form-group">
+            <label >Image</label>
+            <input type="file" name="image"  class="form-control" >
+          </div>
+          <% if (Smessage) {%>
+            <div class="alert alert-success">
+              <%= Smessage %>
+  
+            </div>
+  
+            <% } %>
+            <% if (Emessage) {%>
+              <div class="alert alert-danger">
+                <%= Emessage %>
+    
+              </div>
+    
+              <% } %>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+</div>
+
+
+
+<%- include('shared/bottom.ejs')%>
